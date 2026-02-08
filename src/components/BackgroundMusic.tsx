@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 // Import de l'audio via Vite pour obtenir l'URL correcte lors du bundling
-import bgm from "../assets/audio.mpeg";
+import bgm from "../assets/JE_te_promet.aac";
 import { Volume2, VolumeX } from "lucide-react";
 import { motion } from "motion/react";
 

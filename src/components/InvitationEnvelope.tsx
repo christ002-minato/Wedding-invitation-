@@ -143,10 +143,10 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                   initial={{ y: 0, opacity: 0, scale: 0.95 }}
                   animate={{ y: -90, opacity: 1, scale: 1 }}
                   transition={{ duration: 2.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="absolute left-1/2 bg-white rounded-lg shadow-2xl p-6 md:p-8 flex flex-col items-center justify-center z-30"
+                  className="absolute left-1/3 bg-white rounded-lg shadow-2xl p-6 md:p-8 flex flex-col items-center justify-center z-30"
                   style={{
                     width: '280px',
-                    top: '20px',
+                    top: '90px',
                     transform: 'translateX(-50%)',
                     border: '1px solid #E8D5A3',
                     background: 'linear-gradient(180deg, #fffbfc, #fff)',
