@@ -381,7 +381,7 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="text-lg font-serif tracking-wide">Voire plus</span>
+                  <span className="text-lg font-serif tracking-wide">Plus d'information</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </motion.div>

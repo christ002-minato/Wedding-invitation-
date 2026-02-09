@@ -3,7 +3,7 @@ import shubLogo from "figma:asset/15320d6e2ab8954503febfc3e48ea06e3e74a94d.png";
 
 export function Footer() {
   const openWhatsApp = () => {
-    window.open("https://wa.me/+22544808513", "_blank");
+    window.open("https://wa.me/+2250565284279", "_blank");
   };
 
   return (

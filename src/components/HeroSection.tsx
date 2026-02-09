@@ -1,9 +1,7 @@
 import { HeroSlider } from "./HeroSlider";
 import { Heart } from "lucide-react";
 import { FloatingPetalsUp } from "./FloralDecorations";
-import croix_rouge from "../assets/croix-rouge.jpg";
 import bague from "../assets/bague.jpg";
-import rose_bible_2 from "../assets/rose-bible-2.jpg";
 
 
 
@@ -13,9 +11,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ onRSVPClick }: HeroSectionProps) {
   const heroImages = [
-    croix_rouge,
     bague,
-    rose_bible_2,
   ];
 
   return (
