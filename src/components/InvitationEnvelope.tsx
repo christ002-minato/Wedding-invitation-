@@ -143,10 +143,10 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                   initial={{ y: 0, opacity: 0, scale: 0.95 }}
                   animate={{ y: -90, opacity: 1, scale: 1 }}
                   transition={{ duration: 2.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="absolute left-1/3 bg-white rounded-lg shadow-2xl p-6 md:p-8 flex flex-col items-center justify-center z-30"
+                  className="absolute left-1/3 bg-white rounded-lg shadow-2xl p-5 md:p-6  flex flex-col items-center justify-center z-30"
                   style={{
-                    width: '280px',
-                    top: '90px',
+                    width: '240px',
+                    top: '100px',
                     transform: 'translateX(-50%)',
                     border: '1px solid #E8D5A3',
                     background: 'linear-gradient(180deg, #fffbfc, #fff)',
@@ -177,7 +177,7 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.7 }}
-                      className="text-xs italic mb-4 text-neutral-600"
+                      className="text-[10px] italic mb-3 text-neutral-600"
                     >
                       « J'ai trouvé celui que mon âme aime »
                     </motion.p>
@@ -185,7 +185,7 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: 1.8 }}
-                      className="text-xs mb-4 text-neutral-500"
+                      className="text-[9px] mb-3 text-neutral-500"
                     >
                       Cantique 3:4
                     </motion.p>
@@ -195,7 +195,7 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 2, type: "spring" }}
-                      className="text-3xl md:text-4xl text-red-900 mb-2 font-serif"
+                      className="text-2xl md:text-3xl text-red-900 mb-2 font-serif"
                     >
                       Augustin & Chantal
                     </motion.h1>
@@ -381,7 +381,7 @@ export function InvitationEnvelope({ onComplete }: InvitationEnvelopeProps) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="text-lg font-serif tracking-wide">Entrer sur le site</span>
+                  <span className="text-lg font-serif tracking-wide">Voire plus</span>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </motion.div>

@@ -1,6 +1,11 @@
 import { HeroSlider } from "./HeroSlider";
 import { Heart } from "lucide-react";
 import { FloatingPetalsUp } from "./FloralDecorations";
+import croix_rouge from "../assets/croix-rouge.jpg";
+import bague from "../assets/bague.jpg";
+import rose_bible_2 from "../assets/rose-bible-2.jpg";
+
+
 
 interface HeroSectionProps {
   onRSVPClick: () => void;
@@ -8,9 +13,9 @@ interface HeroSectionProps {
 
 export function HeroSection({ onRSVPClick }: HeroSectionProps) {
   const heroImages = [
-    "https://images.unsplash.com/photo-1768899819100-5764d9ed1711?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwY291cGxlJTIwd2VkZGluZyUyMHJlZCUyMHJvc2VzfGVufDF8fHx8MTc2OTc5MDAzMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "https://images.unsplash.com/photo-1768462127062-6570d1c695e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxicmlkZSUyMGdyb29tJTIwcm9tYW50aWMlMjBwb3J0cmFpdHxlbnwxfHx8fDE3Njk3MDM3NDR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "https://images.unsplash.com/photo-1643047757508-f747bbe05acb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHJpc3RpYW4lMjB3ZWRkaW5nJTIwY2VyZW1vbnklMjBjaHVyY2h8ZW58MXx8fHwxNzY5NzkwMDMzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    croix_rouge,
+    bague,
+    rose_bible_2,
   ];
 
   return (

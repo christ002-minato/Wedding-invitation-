@@ -1,5 +1,7 @@
 import { Heart, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import rose_bible_1 from "../assets/rose-bible-1.jpg";
+import rose_bible_2 from "../assets/rose-bible-2.jpg";
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,10 +24,9 @@ export function AboutSection() {
     return () => observer.disconnect();
   }, []);
 
-  const galleryImages = [
-    "https://images.unsplash.com/photo-1487035092507-28f5c8ba203e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3VwbGUlMjBsb3ZlJTIwcm9tYW50aWMlMjByb3Nlc3xlbnwxfHx8fDE3Njk3OTAwNzN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "https://images.unsplash.com/photo-1669869608865-84bb10423f99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWQlMjByb3NlcyUyMGJvdXF1ZXQlMjByb21hbnRpY3xlbnwxfHx8fDE3Njk2NjYyMTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    "https://images.unsplash.com/photo-1694015708634-174e883cbe11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaHJpc3RpYW4lMjBjb3VwbGUlMjBwcmF5aW5nJTIwdG9nZXRoZXJ8ZW58MXx8fHwxNzY5NzkwMDc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+  const galleryImages = [ 
+    rose_bible_2,
+    rose_bible_1,
   ];
 
   return (
