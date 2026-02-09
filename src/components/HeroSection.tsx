@@ -12,6 +12,8 @@ interface HeroSectionProps {
 export function HeroSection({ onRSVPClick }: HeroSectionProps) {
   const heroImages = [
     bague,
+    bague,
+    bague,
   ];
 
   return (
