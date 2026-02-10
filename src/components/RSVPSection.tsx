@@ -50,6 +50,10 @@ const handleSubmit = async (e: React.FormEvent) => {
     const affinityLabels: Record<string, string> = {
       parents_mariee: "Parents de la mariée",
       parents_marie: "Parents du marié",
+      supérieur_hiérachique: "Supérieur hiérarchique",
+      representants_associations: "Représentants d'associations",
+      frère_communauté_mariée: "Frère de communauté de la mariée",
+      frère_communauté_marié: "Frère de communauté du marié",
       amis_mariee: "Amis de la mariée",
       amis_marie: "Amis du marié",
       collogue_marie: "Collègue du marié",
@@ -206,6 +210,10 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <option value="">Sélectionnez...</option>
                     <option value="parents_mariee">Parents de la mariée</option>
                     <option value="parents_marie">Parents du marié</option>
+                    <option value="supérieur_hiérachique">Supérieur hiérarchique</option>
+                    <option value="representants_associations">Représentants d'associations</option>
+                    <option value="frère_communauté_mariée">Frère de communauté de la mariée</option>
+                    <option value="frère_communauté_marié">Frère de communauté du marié</option>
                     <option value="amis_mariee">Amis de la mariée</option>
                     <option value="amis_marie">Amis du marié</option>
                     <option value="collegue_marie">Collègue du marié</option>
@@ -291,7 +299,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border-2 border-neutral-200 bg-[var(--input-background)] focus:border-red-700 focus:outline-none transition-colors"
                     >
-                      <option value="1">vous seul</option>
+                      <option value="1">Moi seule</option>
                       <option value="2">2 personnes</option>
                       <option value="3">3 personnes</option>
                       <option value="4">4 personnes</option>
