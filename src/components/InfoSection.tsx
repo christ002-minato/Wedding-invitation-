@@ -84,18 +84,18 @@ export function InfoSection() {
                 </div>
               </div>
 
-              {/* Mme TANOH */}
+              {/* Mme N'GUESSAN */}
               <div className="flex flex-col items-center gap-3 bg-gradient-to-br from-red-50 to-rose-50 rounded-xl px-6 py-6 shadow-md hover:shadow-lg transition-all">
                 <div className="w-12 h-12 bg-gradient-to-br from-red-700 to-red-900 rounded-full flex items-center justify-center shadow-md">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-center">
-                  <p className="text-sm text-neutral-600 mb-1">Mme TANOH</p>
+                  <p className="text-sm text-neutral-600 mb-1">Mme N'GUESSAN Marina</p>
                   <a 
-                    href="tel:+2250709013526"
+                    href="tel:+2250707182153"
                     className="text-xl md:text-2xl text-red-900 font-semibold hover:text-red-700 transition-colors"
                   >
-                    07 09 01 35 26
+                    07 07 18 21 53
                   </a>
                 </div>
               </div>

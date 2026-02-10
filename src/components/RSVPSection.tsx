@@ -52,6 +52,8 @@ const handleSubmit = async (e: React.FormEvent) => {
       parents_marie: "Parents du marié",
       amis_mariee: "Amis de la mariée",
       amis_marie: "Amis du marié",
+      collogue_marie: "Collègue du marié",
+      collegue_mariee: "Collègue de la mariée",
       autre: "Autre",
       "": "",
     };
@@ -206,6 +208,8 @@ const handleSubmit = async (e: React.FormEvent) => {
                     <option value="parents_marie">Parents du marié</option>
                     <option value="amis_mariee">Amis de la mariée</option>
                     <option value="amis_marie">Amis du marié</option>
+                    <option value="collegue_marie">Collègue du marié</option>
+                    <option value="collegue_mariee">Collègue de la mariée</option>
                     <option value="autre">Autre</option>
                   </select>
 
