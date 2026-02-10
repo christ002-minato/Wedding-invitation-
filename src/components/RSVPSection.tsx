@@ -11,6 +11,8 @@ export function RSVPSection() {
     guests: "1",
     message: "",
     whatsapp: "",
+    affinity: "",
+    affinityOther: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -34,9 +36,27 @@ export function RSVPSection() {
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
   
+  // Validation front-end
+  if (!formData.affinity) {
+    toast.error("Veuillez sélectionner votre affinité avec les mariés");
+    return;
+  }
+  if (formData.affinity === "autre" && !formData.affinityOther.trim()) {
+    toast.error("Veuillez préciser votre affinité");
+    return;
+  }
+
   try {
+    const affinityLabels: Record<string, string> = {
+      parents_mariee: "Parents de la mariée",
+      parents_marie: "Parents du marié",
+      amis_mariee: "Amis de la mariée",
+      amis_marie: "Amis du marié",
+      autre: "Autre",
+      "": "",
+    };
     
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzKUrqlI3zCCQL3vhJ7NDFnWBa_x_QJGdXmhnBI3xJBOfYcNxsUznW3B6E40dzE18dH/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbybiZ68lpayWveXnO4l9WG9HVEz5iW3agLHhD8qyYwalvgzRFwtritqXTaNBEQB4yHB/exec";
 
     if (GOOGLE_SCRIPT_URL.includes("YOUR_SCRIPT_ID")) {
       toast.error("ℹ️ URL Google Apps Script non configurée", {
@@ -45,15 +65,22 @@ const handleSubmit = async (e: React.FormEvent) => {
       return;
     }
 
-    console.log("📤 Envoi des données RSVP :", formData);
-    
+    const payload = {
+      ...formData,
+      affinity_code: formData.affinity,
+      affinity: affinityLabels[formData.affinity] || formData.affinity,
+      affinity_detail: formData.affinity === "autre" ? formData.affinityOther : "",
+    };
+
+    console.log("📤 Envoi des données RSVP :", payload);
+
     const response = await fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
       mode: "no-cors", // Important pour éviter les erreurs CORS avec Google Apps Script
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(payload),
     });
 
     console.log("✅ Réponse reçue du serveur (no-cors mode)");
@@ -72,6 +99,8 @@ const handleSubmit = async (e: React.FormEvent) => {
         guests: "1",
         message: "",
         whatsapp: "",
+        affinity: "",
+        affinityOther: "",
       });
     }, 3000);
     
@@ -155,6 +184,53 @@ const handleSubmit = async (e: React.FormEvent) => {
                   />
                 </div>
 
+                {/* Affinité */}
+                <div>
+                  <label
+                    htmlFor="affinity"
+                    className="block text-sm uppercase tracking-wide text-neutral-800 mb-2 flex items-center gap-2"
+                  >
+                    <Heart className="w-3 h-3 text-red-600 fill-red-600" />
+                    Affinité avec les mariés
+                  </label>
+                  <select
+                    id="affinity"
+                    name="affinity"
+                    value={formData.affinity}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border-2 border-neutral-200 bg-[var(--input-background)] focus:border-red-700 focus:outline-none transition-colors"
+                  >
+                    <option value="">Sélectionnez...</option>
+                    <option value="parents_mariee">Parents de la mariée</option>
+                    <option value="parents_marie">Parents du marié</option>
+                    <option value="amis_mariee">Amis de la mariée</option>
+                    <option value="amis_marie">Amis du marié</option>
+                    <option value="autre">Autre</option>
+                  </select>
+
+                  {formData.affinity === "autre" && (
+                    <div className="mt-3">
+                      <label
+                        htmlFor="affinityOther"
+                        className="block text-sm uppercase tracking-wide text-neutral-800 mb-2"
+                      >
+                        Précisez
+                      </label>
+                      <input
+                        type="text"
+                        id="affinityOther"
+                        name="affinityOther"
+                        value={formData.affinityOther}
+                        onChange={handleChange}
+                        required={formData.affinity === "autre"}
+                        className="w-full px-4 py-3 rounded-lg border-2 border-neutral-200 bg-[var(--input-background)] focus:border-red-700 focus:outline-none transition-colors"
+                        placeholder="Précisez votre affinité"
+                      />
+                    </div>
+                  )}
+                </div>
+
                 {/* Attendance */}
                 <div>
                   <label
@@ -202,7 +278,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       className="block text-sm uppercase tracking-wide text-neutral-800 mb-2 flex items-center gap-2"
                     >
                       <Heart className="w-3 h-3 text-red-600 fill-red-600" />
-                      Nombre de Personnes *
+                      Nombre de Personnes avec lesquelles  vous venez *
                     </label>
                     <select
                       id="guests"
@@ -211,7 +287,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border-2 border-neutral-200 bg-[var(--input-background)] focus:border-red-700 focus:outline-none transition-colors"
                     >
-                      <option value="1">1 personne</option>
+                      <option value="1">vous seul</option>
                       <option value="2">2 personnes</option>
                       <option value="3">3 personnes</option>
                       <option value="4">4 personnes</option>
